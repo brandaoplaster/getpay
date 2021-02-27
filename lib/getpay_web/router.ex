@@ -7,6 +7,8 @@ defmodule GetpayWeb.Router do
 
   scope "/api", GetpayWeb do
     pipe_through :api
+
+    post "/users", UsersController, :create
   end
 
   if Mix.env() in [:dev, :test] do
