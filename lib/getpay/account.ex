@@ -11,6 +11,8 @@ defmodule Getpay.Account do
     field :balance, :decimal
 
     belongs_to :user, User
+
+    timestamps()
   end
 
   @required_params [:balance, :user_id]
