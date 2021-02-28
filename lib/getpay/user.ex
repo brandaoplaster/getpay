@@ -2,6 +2,7 @@ defmodule Getpay.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Getpay.Account
   alias Ecto.Changeset
 
   @primary_key {:id, :binary_id, autogenerate: true}
@@ -13,6 +14,8 @@ defmodule Getpay.User do
     field :age, :integer
     field :password_hash, :string
     field :password, :string, virtual: true
+
+    has_one :account, Account
 
     timestamps()
   end
